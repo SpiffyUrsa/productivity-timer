@@ -1,5 +1,10 @@
 import React from 'react';
 import './App.css';
+import BreakLength from "./BreakLength.js";
+import SessionLength from "./SessionLength.js";
+import Timer from "./Timer.js";
+import beep from "./beep.wav";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -53,7 +58,6 @@ class App extends React.Component {
   handleTicking() {
     if (this.state.ticking === false) {
       this.interval = setInterval(this.tick, 1000);
-      this.interval;
       this.setState({ticking: true, reset: false});
     } else {
       clearInterval(this.interval);
@@ -113,12 +117,16 @@ class App extends React.Component {
   }
  
   render () {
-    var beep = document.getElementById("beep");
+    let beepSound = new Audio(beep);
     if (this.state.timerMinutes === 0 && this.state.timerSeconds === 0) {
-      beep.play();
+      beepSound.play().then(function() {
+        console.log("successfully played!")
+      }).catch(function(error) {
+        console.log("Failed to play.")
+      });
     } else if (this.state.reset) {
-      beep.pause();
-      beep.currentTime = 0;
+      beepSound.pause()
+      beepSound.currentTime = 0;
     }
     
     return (
@@ -150,11 +158,11 @@ class App extends React.Component {
               timerType={this.state.timerType}
             />
           </div>
-        <audio id="beep" src="https://goo.gl/65cBl1" preload="auto" />
+        {/* <audio id="beep" src="https://goo.gl/65cBl1" preload="auto" /> */}
           <br />
           <br />
           <br />
-        <h5 className="text-center">Coded by Jonathan Wong</h5>
+        <h5 className="text-center">Coded by Jon Wong</h5>
       </div>
     )
   }
