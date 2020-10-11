@@ -5,6 +5,19 @@ import SessionLength from "./SessionLength.js";
 import Timer from "./Timer.js";
 import beep from "./beep.wav";
 
+/** App Component
+ * 
+ *  State: 
+ *    breakLength: An integer describing how long a break is.
+ *    sessionLength: An integer describing how long a session is.
+ *    timerMinutes: An integer describing the current minute time.
+ *    timerSeconds: An integer describing the current seconds.
+ *    ticking: Boolean for whether the timer is counting down.
+ *    timerType: String describing what the timer is currently counting down.
+ *    reset: Boolean for whether to reset the timer.
+ *    
+ *  App -> (BreakLength, SessionLength, Timer)
+ */
 
 class App extends React.Component {
   constructor(props) {
@@ -130,7 +143,7 @@ class App extends React.Component {
     }
     
     return (
-      <div className="container-fluid">
+      <div className="App container-fluid pt-5">
         <div className="row">
           <div className = "col-md-6 text-center">    
              <BreakLength 
@@ -158,11 +171,6 @@ class App extends React.Component {
               timerType={this.state.timerType}
             />
           </div>
-        {/* <audio id="beep" src="https://goo.gl/65cBl1" preload="auto" /> */}
-          <br />
-          <br />
-          <br />
-        <h5 className="text-center">Coded by Jon Wong</h5>
       </div>
     )
   }

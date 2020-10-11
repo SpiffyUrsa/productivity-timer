@@ -1,5 +1,15 @@
 import React from "react";
 
+/** BreakLength component
+ * 
+ *  Props:
+ *    breakLength: An integer for how long the break should be.
+ *    handleDecrement: A method decreasing the break length.
+ *    handleIncrement: A method increasing the break length.
+ * 
+ *  App -> BreakLength
+ */
+
 function BreakLength (props) {
   
   return (
