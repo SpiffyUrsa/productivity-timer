@@ -1,5 +1,15 @@
 import React from "react";
 
+/** SessionLength component
+ * 
+ *  Props:
+ *    sessionlength: An integer for how long the session should be.
+ *    handleDecrement: A method decreasing the session length.
+ *    handleIncrement: A method increasing the session length.
+ * 
+ *  App -> SessionLength
+ */
+
 function SessionLength (props) {
   
   return (
