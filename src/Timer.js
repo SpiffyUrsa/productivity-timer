@@ -1,5 +1,18 @@
 import React from "react";
 
+/** Timer component
+ * 
+ *  Props:
+ *    minutes: An integer for the minutes on the timer.
+ *    seconds: An integer for the seconds on the timer.
+ *    timerType: A string describing what the timer type is.
+ *    handleTicking: A method that handles the ticking of the timer.
+ *    ticking: A boolean describing whether the timer is moving or not.
+ *    handleReset: A method that handles the reset of the timer.
+ * 
+ *  App -> Timer
+ */
+
 function Timer (props) {
   
   return (
